@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://jm34koeosn3h"]
+
+[ext_resource type="Script" path="res://Rope.gd" id="1_dl2kw"]
+[ext_resource type="PackedScene" uid="uid://sxj2i1xfw0ih" path="res://rope_end_piece.tscn" id="2_gj4kg"]
+[ext_resource type="PackedScene" uid="uid://b2d85qpoaxmqn" path="res://player.tscn" id="2_p4d30"]
+
+[node name="Rope" type="Node"]
+script = ExtResource("1_dl2kw")
+
+[node name="Player" parent="." instance=ExtResource("2_p4d30")]
+
+[node name="RopeStartPiece" parent="." instance=ExtResource("2_gj4kg")]
+position = Vector2(112, 0)
+mass = 1309.1

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4ljesirxns34"]
+
+[ext_resource type="Script" path="res://Scripts/virus.gd" id="1_51jcm"]
+[ext_resource type="Texture2D" uid="uid://8kata8qjsr62" path="res://virus.png" id="2_yqfh3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wd38f"]
+size = Vector2(138, 82)
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_51jcm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wd38f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.499999, 7)
+scale = Vector2(3.26563, 3.14063)
+texture = ExtResource("2_yqfh3")

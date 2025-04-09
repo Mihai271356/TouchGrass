@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp2828sw2coyx"]
+
+[ext_resource type="Script" path="res://Scripts/RopePiece.gd" id="1_iuxur"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0edk"]
+size = Vector2(2, 14)
+
+[sub_resource type="Gradient" id="Gradient_h1xkr"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nvp4e"]
+gradient = SubResource("Gradient_h1xkr")
+
+[node name="RopePiece" type="RigidBody2D"]
+collision_layer = 2
+mass = 0.01
+angular_damp = 1.0
+script = ExtResource("1_iuxur")
+
+[node name="C" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_a0edk")
+debug_color = Color(0, 0.6, 0.690196, 0.419608)
+
+[node name="J" type="PinJoint2D" parent="C"]
+position = Vector2(0, 10)
+scale = Vector2(4.795, 4.795)
+disable_collision = false
+softness = 0.41
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 10)
+scale = Vector2(0.15625, 0.3125)
+texture = SubResource("GradientTexture2D_nvp4e")

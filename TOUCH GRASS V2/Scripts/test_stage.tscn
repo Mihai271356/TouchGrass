@@ -1,6 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://clyl23notxxep"]
+[gd_scene load_steps=15 format=3 uid="uid://clyl23notxxep"]
 
 [ext_resource type="Script" path="res://Scripts/test_stage.gd" id="1_yja7x"]
+[ext_resource type="Texture2D" uid="uid://daqdnxeyhyyqt" path="res://components_background.png" id="2_r2ceb"]
+[ext_resource type="PackedScene" uid="uid://beoxl3w7fevl4" path="res://Pickup.tscn" id="3_jnxsy"]
+[ext_resource type="PackedScene" uid="uid://b4ljesirxns34" path="res://Scripts/virus.tscn" id="4_5cfw6"]
+[ext_resource type="PackedScene" uid="uid://iynrx6fetuwn" path="res://gravity_trigger.tscn" id="5_oxtte"]
 
 [sub_resource type="Gradient" id="Gradient_gp6x8"]
 
@@ -10,8 +14,34 @@ gradient = SubResource("Gradient_gp6x8")
 [sub_resource type="CircleShape2D" id="CircleShape2D_5mq0c"]
 radius = 32.0624
 
+[sub_resource type="Gradient" id="Gradient_t4t56"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7osju"]
+gradient = SubResource("Gradient_t4t56")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mrub"]
+radius = 21.5
+height = 385.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tla8q"]
+radius = 21.5
+height = 383.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lcfhn"]
+radius = 22.5
+height = 389.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_34yfm"]
+radius = 23.5
+height = 387.0
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_yja7x")
+
+[node name="ComponentsBackground" type="Sprite2D" parent="."]
+position = Vector2(1944, 324)
+scale = Vector2(2.53125, 2.53125)
+texture = ExtResource("2_r2ceb")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(579, 265)
@@ -21,3 +51,78 @@ texture = SubResource("GradientTexture2D_l6fx2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_5mq0c")
+
+[node name="Pickup" parent="." instance=ExtResource("3_jnxsy")]
+position = Vector2(688, 468)
+
+[node name="RopeCutter" parent="." instance=ExtResource("4_5cfw6")]
+position = Vector2(941, 204)
+
+[node name="RopeCutter2" parent="." instance=ExtResource("4_5cfw6")]
+position = Vector2(508, 555)
+
+[node name="GravityTrigger" parent="." instance=ExtResource("5_oxtte")]
+position = Vector2(717, 292)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(1329, 202)
+disable_mode = 1
+mass = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
+position = Vector2(12.5, -11)
+scale = Vector2(0.703125, 6.03125)
+texture = SubResource("GradientTexture2D_7osju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2(12.5, -11.5)
+shape = SubResource("CapsuleShape2D_5mrub")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="."]
+position = Vector2(1497, 473)
+disable_mode = 1
+mass = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3"]
+position = Vector2(12.5, -11)
+scale = Vector2(0.703125, 6.03125)
+texture = SubResource("GradientTexture2D_7osju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+position = Vector2(12.5, -11.5)
+shape = SubResource("CapsuleShape2D_tla8q")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="."]
+position = Vector2(1663, 195)
+disable_mode = 1
+mass = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D4"]
+position = Vector2(12.5, -11)
+scale = Vector2(0.703125, 6.03125)
+texture = SubResource("GradientTexture2D_7osju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
+position = Vector2(12.5, -11.5)
+shape = SubResource("CapsuleShape2D_lcfhn")
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="."]
+position = Vector2(1862, 471)
+disable_mode = 1
+mass = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D5"]
+position = Vector2(12.5, -11)
+scale = Vector2(0.703125, 6.03125)
+texture = SubResource("GradientTexture2D_7osju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5"]
+position = Vector2(12.5, -11.5)
+shape = SubResource("CapsuleShape2D_34yfm")
+
+[node name="Pickup2" parent="." instance=ExtResource("3_jnxsy")]
+position = Vector2(2107, 276)
+scale = Vector2(2.53125, 2.53125)
+
+[node name="Lever" parent="." instance=ExtResource("5_oxtte")]
+position = Vector2(1110, 501)

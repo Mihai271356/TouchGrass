@@ -12,4 +12,8 @@ export_credentials.cfg
 # Mono-specific ignores
 .mono/
 data_*/
+<<<<<<< HEAD
 mono_crash.*.json
+=======
+mono_crash.*.json
+>>>>>>> b24917836b973dddc670f929f07b821360b11db1

@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://1haq1bqps7ah"]
+
+[ext_resource type="Script" path="res://DeathScreen.gd" id="1_ltef7"]
+
+[sub_resource type="Theme" id="Theme_3rnqm"]
+
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ltef7")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1111.0
+offset_bottom = 603.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.737255, 0.737255, 0.737255, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 153.0
+offset_right = 643.0
+offset_bottom = 192.0
+theme = SubResource("Theme_3rnqm")
+theme_type_variation = &"HeaderLarge"
+text = "YOU DEAD"
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 302.0
+offset_right = 739.0
+offset_bottom = 463.0

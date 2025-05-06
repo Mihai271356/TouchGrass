@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://beoxl3w7fevl4"]
+
+[ext_resource type="Script" path="res://Pickup.gd" id="1_g1pm8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dscbf"]
+
+[sub_resource type="Gradient" id="Gradient_c6bve"]
+colors = PackedColorArray(0.598213, 0.00179682, 0.793242, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_v3fpn"]
+gradient = SubResource("Gradient_c6bve")
+
+[node name="Pickup" type="Area2D" groups=["Pickups"]]
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("1_g1pm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dscbf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0859375, 16)
+texture = SubResource("GradientTexture1D_v3fpn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2d85qpoaxmqn"]
+[gd_scene load_steps=15 format=3 uid="uid://b2d85qpoaxmqn"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_5rego"]
 [ext_resource type="Texture2D" uid="uid://ctnuvdt7cy5c4" path="res://body.png" id="2_vo7gf"]
@@ -25,6 +25,10 @@ size = Vector2(15.9998, 9.99962)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn6dc"]
 size = Vector2(13.9782, 8.99803)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v67hp"]
+radius = 20.0
+height = 68.0
 
 [node name="Player" type="RigidBody2D"]
 collision_layer = 12
@@ -155,3 +159,10 @@ texture = ExtResource("7_hs6gr")
 position = Vector2(-51.9605, 21.3948)
 rotation = 0.275762
 shape = SubResource("RectangleShape2D_sn6dc")
+
+[node name="PickupSensor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupSensor"]
+light_mask = 15
+visibility_layer = 15
+shape = SubResource("CapsuleShape2D_v67hp")
